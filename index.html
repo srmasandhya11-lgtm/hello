@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Anniversary Bhaiya & Bhabhi ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  overflow:hidden;
+}
+
+/* Slider */
+.slider{
+  display:flex;
+  width:400vw;
+  height:100vh;
+  transition:transform 1s ease-in-out;
+}
+
+/* Common Slide Style */
+.slide{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  color:white;
+}
+
+/* Backgrounds */
+.page1{ background:linear-gradient(135deg,#ff758c,#ff7eb3); }
+.page2{ background:linear-gradient(135deg,#fbc2eb,#a6c1ee); }
+.page3{ background:linear-gradient(135deg,#ffecd2,#fcb69f); }
+.page4{ background:linear-gradient(135deg,#a18cd1,#fbc2eb); }
+
+/* Animations */
+.fade{ animation:fadeIn 2s ease; }
+.slideUp{ animation:slideUp 2s ease; }
+.zoom{ animation:zoom 2s ease; }
+.pulse{ animation:pulse 1.5s infinite; }
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+@keyframes slideUp{
+  from{transform:translateY(60px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+@keyframes zoom{
+  from{transform:scale(0.7); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* Text */
+h1{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+p{
+  font-size:1.3rem;
+  max-width:800px;
+}
+
+/* Buttons */
+.next-btn{
+  margin-top:30px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:1.1rem;
+  cursor:pointer;
+  background:white;
+  color:#444;
+  transition:0.3s;
+}
+.next-btn:hover{
+  background:#ffe1ec;
+  transform:scale(1.05);
+}
+
+/* Options */
+.options{
+  margin-top:20px;
+  text-align:left;
+  font-size:1.2rem;
+}
+.option{
+  margin:10px 0;
+  background:rgba(255,255,255,0.2);
+  padding:10px 20px;
+  border-radius:20px;
+}
+
+/* Game box */
+.game-box{
+  margin-top:20px;
+  padding:20px;
+  background:rgba(255,255,255,0.2);
+  border-radius:20px;
+  font-size:1.2rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider" id="slider">
+
+<!-- PAGE 1 -->
+<div class="slide page1">
+  <h1 class="fade">Happy Anniversary 💐</h1>
+  <p class="slideUp">
+    Dear Bhaiya & Bhabhi ❤️<br><br>
+    Your love, understanding, and togetherness inspire everyone around you.
+    May your bond grow stronger with every passing year.
+  </p>
+  <button class="next-btn" onclick="nextPage()">Next ➡</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="slide page2">
+  <h1 class="zoom">Fun Question Time 💕</h1>
+  <p class="slideUp">What is Bhabhi’s favorite color?</p>
+
+  <div class="options slideUp">
+    <div class="option">💙 Blue</div>
+    <div class="option">💚 Green</div>
+    <div class="option">❤️ Red (Correct)</div>
+    <div class="option">💜 Purple</div>
+  </div>
+
+  <button class="next-btn" onclick="nextPage()">Next ➡</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="slide page3">
+  <h1 class="fade">Mini Love Game 🎮</h1>
+  <div class="game-box slideUp">
+    💖 Game Challenge 💖<br><br>
+    👉 Look at each other and smile 😊<br>
+    👉 Say one thing you love the most about each other 💬<br>
+    👉 Hold hands for 10 seconds 🤝<br><br>
+    Winner: BOTH of you 💕
+  </div>
+
+  <button class="next-btn" onclick="nextPage()">Next ➡</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="slide page4">
+  <h1 class="pulse">A Message From Heart 💖</h1>
+  <p class="fade">
+    Bhaiya & Bhabhi,<br><br>
+    You both define what true love looks like — patience, care, laughter,
+    and standing strong together in every situation.
+    May your life be filled with endless happiness, good health,
+    and countless beautiful memories.<br><br>
+    Happy Anniversary once again 💐  
+    Stay blessed always ❤️
+  </p>
+</div>
+
+</div>
+
+<script>
+let page = 0;
+const slider = document.getElementById("slider");
+
+function nextPage(){
+  if(page < 3){
+    page++;
+    slider.style.transform = `translateX(-${page * 100}vw)`;
+  }
+}
+</script>
+
+</body>
+</html>
